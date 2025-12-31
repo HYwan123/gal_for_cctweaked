@@ -1,5 +1,6 @@
-require("core.draw")
+require("util.draw_option")
 require("util.draw_text")
+require("util.draw_gui")
 require("data.text")
 term.clear()
 draw_open(12, 2)
