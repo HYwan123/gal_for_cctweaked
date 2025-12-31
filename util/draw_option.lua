@@ -5,13 +5,16 @@ function draw_gal_option(options)
     local width = 40
     local null_lines = math.floor(height / (#options + 1))
     for i, option in ipairs(options) do
+        option = option[1]
         term.setCursorPos(1, i*null_lines - 1)
-        term.blit(string.rep("-", width), string.rep("f", width), string.rep("0", width))
+        term.blit(string.rep("-", width), string.rep("0", width), string.rep("f", width))
+        term.setCursorPos(1, i*null_lines)
+        term.blit(string.rep(" ", width), string.rep("0", width), string.rep("f", width))
         local start_x = math.floor((width - #option) / 2) + 1
         term.setCursorPos(start_x, i*null_lines)
         term.blit(option, string.rep("0", #option), string.rep("f", #option))
         term.setCursorPos(1, i*null_lines + 1)
-        term.blit(string.rep("-", width), string.rep("f", width), string.rep("0", width))
+        term.blit(string.rep("-", width), string.rep("0", width), string.rep("f", width))
     end
     while true do
         local _, _, x, y = os.pullEvent("mouse_click")

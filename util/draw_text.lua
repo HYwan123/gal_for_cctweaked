@@ -75,3 +75,10 @@ end
 function draw_chat_text(text)
     draw_gal_text(text, 5, 15, "0", "f")
 end
+
+function draw_debug_text(text)
+    term.setCursorPos(1, 1)
+    term.setTextColor(colors.red)
+    term.write(text)
+
+end
